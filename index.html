@@ -1,356 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <!-- Meta Tags -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BYX Island Party 2023 | Unforgettable Music Experience</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BYX Island Party 2025</title>
 
   <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
   <!-- External CSS -->
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- AOS Animation CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-
-  <!-- Owl Carousel CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-
-  <!-- Custom Cursor CSS -->
-  <link rel="stylesheet" href="cursor.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
-<body>
-  <!-- Custom Cursor -->
-  <div class="custom-cursor"></div>
-
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="spinner"></div>
-  </div>
-
+<body class="font-sans antialiased text-gray-900">
   <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container">
-      <a class="navbar-brand" href="#home">
-        <img src="images/logo.png" alt="BYX Island Party">
-      </a>
-      <div class="navbar-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+  <nav class="bg-white fixed w-full z-10 top-0 shadow">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-gray-800">BYX Island Party</a>
+      <div class="hidden md:flex space-x-6">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#lineup" class="nav-link">Lineup</a>
+        <a href="#sponsors" class="nav-link">Sponsors</a>
+        <a href="#fundraising" class="nav-link">Fundraising</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
-      <ul class="nav-menu">
-        <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
-        <li class="nav-item"><a href="#lineup" class="nav-link">Lineup</a></li>
-        <li class="nav-item"><a href="#sponsors" class="nav-link">Sponsors</a></li>
-        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#botb" class="nav-link">Battle of the Bands</a></li>
-        <li class="nav-item"><a href="#fundraising" class="nav-link">Fundraising</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
+      <div class="md:hidden">
+        <button @click="open = !open" class="text-gray-800 focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+            viewBox="0 0 24 24" stroke="currentColor">
+            <path x-show="!open" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <path x-show="open" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div x-data="{ open: false }" x-show="open" class="md:hidden">
+      <a href="#" class="block px-4 py-2 text-sm">Home</a>
+      <a href="#about" class="block px-4 py-2 text-sm">About</a>
+      <a href="#lineup" class="block px-4 py-2 text-sm">Lineup</a>
+      <a href="#sponsors" class="block px-4 py-2 text-sm">Sponsors</a>
+      <a href="#fundraising" class="block px-4 py-2 text-sm">Fundraising</a>
+      <a href="#contact" class="block px-4 py-2 text-sm">Contact</a>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="hero-section">
-    <video autoplay muted loop id="hero-video">
-      <source src="videos/hero-video.mp4" type="video/mp4">
-    </video>
-    <div class="overlay"></div>
-    <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
-      <h1>BYX Island Party 2023</h1>
-      <p>Unforgettable Music Experience</p>
-      <div class="cta-buttons">
-        <a href="#" class="btn btn-primary m-2">Buy Tickets</a>
-        <a href="#fundraising" class="btn btn-secondary m-2">Donate Now</a>
-      </div>
+  <header class="hero-section bg-cover bg-center h-screen flex items-center justify-center"
+    style="background-image: url('images/hero.jpg');">
+    <div class="bg-black bg-opacity-50 w-full h-full absolute"></div>
+    <div class="relative z-10 text-center text-white">
+      <h1 class="text-5xl font-bold mb-4">BYX Island Party 2025</h1>
+      <p class="text-xl mb-8">Join us for a night of music, fun, and community!</p>
+      <a href="#" class="btn-primary">Buy Tickets</a>
+      <a href="#fundraising" class="btn-secondary ml-4">Donate Now</a>
     </div>
-    <a href="#about" class="scroll-down"><i class="fas fa-angle-down"></i></a>
-  </section>
+  </header>
 
   <!-- About Section -->
-  <section id="about" class="section-padding">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2>About BYX Island Party</h2>
-        <p>An annual music festival hosted by Beta Upsilon Chi, bringing people together to support charitable causes.</p>
-      </div>
-      <div class="about-grid">
-        <div class="about-image" data-aos="fade-right" data-aos-delay="200">
-          <img src="images/about.jpg" alt="About BYX Island Party">
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title">About BYX Island Party</h2>
+      <p class="section-subtitle">An annual music festival hosted by Beta Upsilon Chi to bring people together and support charitable causes.</p>
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">Our Mission</h3>
+          <p class="text-gray-700">BYX Island Party aims to create an unforgettable experience that not only entertains but also makes a positive impact on our community by supporting local and national charities.</p>
         </div>
-        <div class="about-text" data-aos="fade-left" data-aos-delay="200">
-          <h3>Our Mission</h3>
-          <p>We aim to create an unforgettable experience that entertains and positively impacts our community by supporting local and national charities.</p>
-          <h3>Event Highlights</h3>
-          <ul>
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">Event Highlights</h3>
+          <ul class="list-disc list-inside text-gray-700">
             <li>Live performances by top artists</li>
-            <li>Gourmet food trucks and artisan vendors</li>
-            <li>Interactive art installations and activities</li>
-            <li>Networking lounges and VIP experiences</li>
+            <li>Food trucks and vendors</li>
+            <li>Interactive games and activities</li>
+            <li>Opportunities to connect and network</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Parallax Section -->
-  <section class="parallax-section" data-parallax="scroll" data-image-src="images/parallax.jpg">
-    <div class="parallax-content" data-aos="fade-in">
-      <h2>Experience the Vibes</h2>
-      <p>Join us for a night of unforgettable memories and music.</p>
-      <a href="#lineup" class="btn btn-outline-light">Discover the Lineup</a>
-    </div>
-  </section>
-
   <!-- Lineup Section -->
-  <section id="lineup" class="section-padding bg-dark">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2 class="text-white">2023 Lineup</h2>
-        <p class="text-muted">Prepare for an incredible lineup of artists!</p>
-      </div>
-      <div class="artist-carousel owl-carousel">
+  <section id="lineup" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title">2025 Lineup</h2>
+      <p class="section-subtitle">Get ready for an amazing lineup of artists!</p>
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Artist Card -->
-        <div class="artist-card" data-aos="zoom-in" data-aos-delay="200">
-          <div class="artist-image">
-            <img src="images/artist1.jpg" alt="Saint Motel">
-            <div class="overlay">
-              <a href="#" class="play-btn"><i class="fas fa-play"></i></a>
-            </div>
-          </div>
-          <div class="artist-info">
-            <h4>Saint Motel</h4>
-            <p>Headlining indie pop band known for energetic performances.</p>
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="images/artist1.jpg" alt="Headliner Artist" class="w-full h-56 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Headliner Artist</h3>
+            <p class="text-gray-700">A brief description of the headliner artist.</p>
           </div>
         </div>
-        <div class="artist-card" data-aos="zoom-in" data-aos-delay="200">
-          <div class="artist-image">
-            <img src="images/artist1.jpg" alt="Saint Motel">
-            <div class="overlay">
-              <a href="#" class="play-btn"><i class="fas fa-play"></i></a>
-            </div>
-          </div>
-          <div class="artist-info">
-            <h4>Saint Motel</h4>
-            <p>Headlining indie pop band known for energetic performances.</p>
+        <!-- Artist Card -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="images/artist2.jpg" alt="Supporting Artist" class="w-full h-56 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Supporting Artist</h3>
+            <p class="text-gray-700">A brief description of the supporting artist.</p>
           </div>
         </div>
-        <div class="artist-card" data-aos="zoom-in" data-aos-delay="200">
-          <div class="artist-image">
-            <img src="images/artist1.jpg" alt="Saint Motel">
-            <div class="overlay">
-              <a href="#" class="play-btn"><i class="fas fa-play"></i></a>
-            </div>
-          </div>
-          <div class="artist-info">
-            <h4>Saint Motel</h4>
-            <p>Headlining indie pop band known for energetic performances.</p>
+        <!-- Artist Card -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+          <img src="images/artist3.jpg" alt="Opening Act" class="w-full h-56 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-2">Opening Act</h3>
+            <p class="text-gray-700">A brief description of the opening act.</p>
           </div>
         </div>
-        <div class="artist-card" data-aos="zoom-in" data-aos-delay="200">
-          <div class="artist-image">
-            <img src="images/artist1.jpg" alt="Saint Motel">
-            <div class="overlay">
-              <a href="#" class="play-btn"><i class="fas fa-play"></i></a>
-            </div>
-          </div>
-          <div class="artist-info">
-            <h4>Saint Motel</h4>
-            <p>Headlining indie pop band known for energetic performances.</p>
-          </div>
-        </div>
-        
-      </div>
-      <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="500">
-        <a href="#botb" class="btn btn-outline-light">See Battle of the Bands Winner</a>
       </div>
     </div>
   </section>
 
   <!-- Sponsors Section -->
-  <section id="sponsors" class="section-padding">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2>Our Sponsors</h2>
-        <p>We thank our generous sponsors for making this event possible.</p>
+  <section id="sponsors" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title">Our Sponsors</h2>
+      <p class="section-subtitle">We thank our generous sponsors for making this event possible.</p>
+      <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+        <img src="images/sponsor1.jpg" alt="Sponsor 1" class="mx-auto" />
+        <img src="images/sponsor2.svg" alt="Sponsor 2" class="mx-auto" />
+        <img src="images/sponsor3.jpg" alt="Sponsor 3" class="mx-auto" />
+        <img src="images/sponsor4.svg" alt="Sponsor 4" class="mx-auto" />
       </div>
-      <div class="sponsors-logos" data-aos="fade-up" data-aos-delay="200">
-        <!-- Sponsor Logos -->
-        <div class="sponsor-logo"><img src="images/sponsor1.jpg" alt="Sponsor 1"></div>
-        <div class="sponsor-logo"><img src="images/sponsor2.svg" alt="Sponsor 1"></div>
-        <div class="sponsor-logo"><img src="images/sponsor3.jpg" alt="Sponsor 1"></div>
-        <div class="sponsor-logo"><img src="images/sponsor4.svg" alt="Sponsor 1"></div>
-        <!-- Repeat Sponsor Logos as needed -->
-      </div>
-      <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="300">
-        <a href="#fundraising" class="btn btn-primary">Become a Sponsor</a>
+      <div class="text-center mt-8">
+        <a href="#fundraising" class="btn-primary">Become a Sponsor</a>
       </div>
     </div>
   </section>
 
   <!-- Fundraising Section -->
-  <section id="fundraising" class="section-padding bg-secondary text-white">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2>Support Our Cause</h2>
-        <p>Your contributions make a significant impact.</p>
-      </div>
-      <div class="fundraising-grid">
-        <div class="fundraising-text" data-aos="fade-right" data-aos-delay="200">
-          <h3>Why Donate?</h3>
-          <p>Your donations help us:</p>
-          <ul>
-            <li>Host a memorable community event</li>
+  <section id="fundraising" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title">Support Our Cause</h2>
+      <p class="section-subtitle">Your contributions make a significant impact on our mission.</p>
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">Why Donate?</h3>
+          <p class="text-gray-700 mb-4">Your donations help us:</p>
+          <ul class="list-disc list-inside text-gray-700">
+            <li>Host a memorable event for the community</li>
             <li>Support local and national charities</li>
             <li>Provide opportunities for emerging artists</li>
-            <li>Enhance community engagement</li>
           </ul>
-          <a href="#" class="btn btn-light">Donate Now</a>
         </div>
-        <div class="fundraising-image" data-aos="fade-left" data-aos-delay="200">
-          <img src="images/fundraising.jpg" alt="Support Our Cause">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Battle of the Bands Section -->
-  <section id="botb" class="section-padding">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2>Battle of the Bands</h2>
-        <p>Discover new talent competing for a spot in our lineup.</p>
-      </div>
-      <div class="botb-grid">
-        <div class="botb-details" data-aos="fade-right" data-aos-delay="200">
-          <h3>Event Details</h3>
-          <ul class="event-details">
-            <li><i class="fa fa-calendar-alt"></i> <strong>Date:</strong> March 15, 2023</li>
-            <li><i class="fa fa-map-marker-alt"></i> <strong>Location:</strong> Downtown Venue</li>
-            <li><i class="fa fa-clock"></i> <strong>Time:</strong> 6:00 PM - 10:00 PM</li>
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">How to Donate</h3>
+          <p class="text-gray-700 mb-4">You can contribute through:</p>
+          <ul class="list-disc list-inside text-gray-700">
+            <li>Online donations via our secure portal</li>
+            <li>Sponsorship packages for businesses</li>
+            <li>In-kind donations and services</li>
           </ul>
-          <a href="#" class="btn btn-secondary">Learn More</a>
+          <a href="https://your-donation-link.com" target="_blank" class="btn-primary mt-4 inline-block">Donate Now</a>
         </div>
-        <div class="botb-winner" data-aos="fade-left" data-aos-delay="200">
-          <h3>Last Year's Winner</h3>
-          <div class="winner-image">
-            <img src="images/botb-winner.jpg" alt="Battle of the Bands Winner">
-            <div class="overlay">
-              <a href="#" class="play-btn"><i class="fas fa-play"></i></a>
-            </div>
-          </div>
-          <p class="mt-3"><strong>The Rising Stars</strong></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Newsletter Section -->
-  <section class="newsletter-section">
-    <div class="container">
-      <div class="newsletter-content" data-aos="fade-up">
-        <h2>Stay Updated</h2>
-        <p>Subscribe to our newsletter for the latest updates and exclusive offers.</p>
-        <form id="newsletterForm" class="newsletter-form">
-          <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
-          <button type="submit" class="btn btn-primary">Subscribe</button>
-        </form>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="section-padding bg-dark text-white">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <h2>Get in Touch</h2>
-        <p>We'd love to hear from you!</p>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
-          <h3>Contact Information</h3>
-          <p><i class="fa fa-envelope"></i> Email: <a href="mailto:info@byxislandparty.com" class="text-white">info@byxislandparty.com</a></p>
-          <p><i class="fa fa-phone"></i> Phone: <a href="tel:+1234567890" class="text-white">+1 (234) 567-890</a></p>
-          <p>Follow us on social media:</p>
-          <div class="social-icons">
-            <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+  <section id="contact" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-subtitle">We'd love to hear from you!</p>
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">Contact Information</h3>
+          <p class="text-gray-700 mb-2"><i class="fas fa-envelope mr-2"></i>Email: <a href="mailto:info@byxislandparty.com" class="text-blue-500">info@byxislandparty.com</a></p>
+          <p class="text-gray-700 mb-2"><i class="fas fa-phone mr-2"></i>Phone: <a href="tel:+1234567890" class="text-blue-500">+1 (234) 567-890</a></p>
+          <p class="text-gray-700 mb-4">Follow us on social media:</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-700 hover:text-blue-500"><i class="fab fa-facebook-f text-2xl"></i></a>
+            <a href="#" class="text-gray-700 hover:text-pink-500"><i class="fab fa-instagram text-2xl"></i></a>
+            <a href="#" class="text-gray-700 hover:text-blue-400"><i class="fab fa-twitter text-2xl"></i></a>
           </div>
         </div>
-        <div class="contact-form" data-aos="fade-left" data-aos-delay="200">
-          <h3>Send Us a Message</h3>
-          <form id="contactForm">
-            <div class="form-group">
-              <input type="text" id="contactName" required>
-              <label for="contactName">Name</label>
-            </div>
-            <div class="form-group">
-              <input type="email" id="contactEmail" required>
-              <label for="contactEmail">Email</label>
-            </div>
-            <div class="form-group">
-              <textarea id="contactMessage" rows="4" required></textarea>
-              <label for="contactMessage">Message</label>
-            </div>
-            <button type="submit" class="btn btn-light">Submit</button>
-          </form>
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">Our Location</h3>
+          <p class="text-gray-700 mb-4">123 Festival Lane<br />City, State, ZIP</p>
+          <iframe src="https://www.google.com/maps/embed?..." width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
+  <footer class="bg-gray-800 text-gray-200 py-10">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- About -->
-        <div class="footer-about">
-          <a href="#home" class="footer-logo">
-            <img src="images/logo-footer.png" alt="BYX Island Party">
-          </a>
+        <div>
+          <h4 class="text-xl font-semibold mb-4">About BYX Island Party</h4>
           <p>BYX Island Party is an annual music festival hosted by Beta Upsilon Chi, dedicated to fostering community and supporting charitable causes.</p>
         </div>
         <!-- Quick Links -->
-        <div class="footer-links">
-          <h5>Quick Links</h5>
-          <ul>
-            <li><a href="#lineup">Lineup</a></li>
-            <li><a href="#sponsors">Sponsors</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#botb">Battle of the Bands</a></li>
-            <li><a href="#fundraising">Fundraising</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <div>
+          <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#lineup" class="hover:underline">Lineup</a></li>
+            <li><a href="#sponsors" class="hover:underline">Sponsors</a></li>
+            <li><a href="#about" class="hover:underline">About</a></li>
+            <li><a href="#fundraising" class="hover:underline">Fundraising</a></li>
+            <li><a href="#contact" class="hover:underline">Contact</a></li>
           </ul>
         </div>
         <!-- Contact -->
-        <div class="footer-contact">
-          <h5>Contact Us</h5>
-          <p><i class="fa fa-envelope"></i> <a href="mailto:info@byxislandparty.com">info@byxislandparty.com</a></p>
-          <p><i class="fa fa-phone"></i> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-          <p>Follow us:</p>
-          <div class="social-icons">
-            <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+        <div>
+          <h4 class="text-xl font-semibold mb-4">Contact Us</h4>
+          <p><i class="fas fa-envelope mr-2"></i>Email: <a href="mailto:info@byxislandparty.com" class="text-blue-400">info@byxislandparty.com</a></p>
+          <p><i class="fas fa-phone mr-2"></i>Phone: <a href="tel:+1234567890" class="text-blue-400">+1 (234) 567-890</a></p>
+          <div class="mt-4 flex space-x-4">
+            <a href="#" class="hover:text-blue-400"><i class="fab fa-facebook-f text-2xl"></i></a>
+            <a href="#" class="hover:text-pink-400"><i class="fab fa-instagram text-2xl"></i></a>
+            <a href="#" class="hover:text-blue-300"><i class="fab fa-twitter text-2xl"></i></a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2023 BYX Island Party. All rights reserved.</p>
+      <div class="mt-10 text-center">
+        <p>&copy; 2025 BYX Island Party. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -358,23 +236,7 @@
   <!-- External JavaScript -->
   <script src="scripts.js"></script>
 
-  <!-- AOS Animation JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
-  <!-- Initialize AOS -->
-  <script>
-    AOS.init({
-      once: true,
-      duration: 1000,
-      offset: 100,
-    });
-  </script>
-
-  <!-- Owl Carousel JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-  <!-- Parallax JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.5.0/parallax.min.js"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
-
 </html>
