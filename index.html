@@ -1,88 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <!-- Meta Tags -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BYX Island Party 2023 | Unforgettable Music Experience</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BYX Island Party 2025</title>
 
   <!-- Favicon -->
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Swiper.js CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+  />
 
   <!-- External CSS -->
-  <link rel="stylesheet" href="styles.css">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome for Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- AOS Animation CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
-<body>
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="spinner"></div>
-  </div>
-
+<body class="font-sans antialiased text-gray-900 bg-white">
   <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container">
-      <a class="navbar-brand" href="#">BYX Island Party</a>
-      <div class="navbar-toggle" id="mobile-menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+  <nav class="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200" x-data="{ open: false }">
+    <div class="container mx-auto flex flex-wrap items-center justify-between p-4">
+      <a href="#" class="flex items-center">
+        <img src="images/logo.jpg" class="h-8 mr-3" alt="BYX Island Party Logo" />
+        <span class="self-center text-2xl font-semibold text-teal-700">BYX Island Party</span>
+      </a>
+      <button @click="open = !open" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-teal-700 md:hidden focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" x-show="!open" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" x-show="open" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <div class="w-full md:block md:w-auto" :class="{'block': open, 'hidden': !open}">
+        <ul class="flex flex-col mt-4 font-medium md:flex-row md:space-x-8 md:mt-0">
+          <li><a href="#" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#lineup" class="nav-link">Lineup</a></li>
+          <li><a href="#sponsors" class="nav-link">Sponsors</a></li>
+          <li><a href="#fundraising" class="nav-link">Fundraising</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
       </div>
-      <ul class="nav-menu">
-        <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
-        <li class="nav-item"><a href="#lineup" class="nav-link">Lineup</a></li>
-        <li class="nav-item"><a href="#sponsors" class="nav-link">Sponsors</a></li>
-        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#botb" class="nav-link">Battle of the Bands</a></li>
-        <li class="nav-item"><a href="#fundraising" class="nav-link">Fundraising</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="hero-section">
-    <video autoplay muted loop id="hero-video">
-      <source src="videos/hero-video.mp4" type="video/mp4">
-    </video>
-    <div class="overlay"></div>
-    <div class="hero-content">
-      <h1 data-aos="fade-up">BYX Island Party 2023</h1>
-      <p data-aos="fade-up" data-aos-delay="100">Unforgettable Music Experience</p>
-      <a href="#" class="btn btn-primary m-2" data-aos="zoom-in" data-aos-delay="200">Buy Tickets</a>
-      <a href="#fundraising" class="btn btn-secondary m-2" data-aos="zoom-in" data-aos-delay="300">Donate Now</a>
+  <header class="hero-section bg-cover bg-center h-screen flex items-center justify-center relative" style="background-image: url('images/hero.jpg');">
+    <div class="bg-teal-900 bg-opacity-50 w-full h-full absolute"></div>
+    <div class="relative z-10 text-center text-white px-6">
+      <h1 class="text-5xl font-bold mb-4">BYX Island Party 2025</h1>
+      <p class="text-xl mb-8">Join us for a night of music, fun, and community!</p>
+      <a href="#" class="btn-primary">Buy Tickets</a>
+      <a href="#fundraising" class="btn-secondary ml-4">Donate Now</a>
     </div>
-    <a href="#about" class="scroll-down"><i class="fas fa-angle-down"></i></a>
-  </section>
+  </header>
 
   <!-- About Section -->
-  <section id="about" class="section-padding">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">About BYX Island Party</h2>
-      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">An annual music festival hosted by Beta Upsilon Chi, bringing people together to support charitable causes.</p>
-      <div class="about-grid">
-        <div class="about-image" data-aos="fade-right" data-aos-delay="200">
-          <img src="images/about.jpg" alt="About BYX Island Party">
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title">About BYX Island Party</h2>
+      <p class="section-subtitle">An annual music festival hosted by Beta Upsilon Chi to bring people together and support charitable causes.</p>
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div>
+          <img src="images/about.jpg" alt="About Image" class="rounded-lg shadow-lg w-full" />
         </div>
-        <div class="about-text" data-aos="fade-left" data-aos-delay="200">
-          <h3>Our Mission</h3>
-          <p>We aim to create an unforgettable experience that entertains and positively impacts our community by supporting local and national charities.</p>
-          <h3>Event Highlights</h3>
-          <ul>
+        <div class="flex flex-col justify-center">
+          <h3 class="text-3xl font-semibold mb-6 text-teal-700">Our Mission</h3>
+          <p class="text-gray-700 mb-6">BYX Island Party aims to create an unforgettable experience that not only entertains but also makes a positive impact on our community by supporting local and national charities.</p>
+          <h3 class="text-3xl font-semibold mb-4 text-teal-700">Event Highlights</h3>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
             <li>Live performances by top artists</li>
-            <li>Gourmet food trucks and artisan vendors</li>
-            <li>Interactive art installations and activities</li>
-            <li>Networking lounges and VIP experiences</li>
+            <li>Food trucks and vendors</li>
+            <li>Interactive games and activities</li>
+            <li>Opportunities to connect and network</li>
           </ul>
         </div>
       </div>
@@ -90,218 +93,242 @@
   </section>
 
   <!-- Lineup Section -->
-  <section id="lineup" class="section-padding bg-light">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">2023 Lineup</h2>
-      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Prepare for an incredible lineup of artists!</p>
-      <div class="artist-carousel owl-carousel">
-        <!-- Artist Card -->
-        <div class="artist-card" data-aos="zoom-in" data-aos-delay="200">
-          <img src="images/artist1.jpg" alt="Saint Motel">
-          <h4>Saint Motel</h4>
-          <p>Headlining indie pop band known for energetic performances.</p>
+  <section id="lineup" class="py-20 bg-gradient-to-b from-teal-100 to-white">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title">2025 Lineup</h2>
+      <p class="section-subtitle">Get ready for an amazing lineup of artists!</p>
+      <!-- Swiper Slider -->
+      <div class="mt-10">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="images/artist1.jpg" alt="Headliner Artist" class="w-full h-64 object-cover" />
+                <div class="p-6">
+                  <h3 class="text-2xl font-semibold mb-2 text-teal-700">Headliner Artist</h3>
+                  <p class="text-gray-700">A brief description of the headliner artist.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="images/artist2.jpg" alt="Supporting Artist" class="w-full h-64 object-cover" />
+                <div class="p-6">
+                  <h3 class="text-2xl font-semibold mb-2 text-teal-700">Supporting Artist</h3>
+                  <p class="text-gray-700">A brief description of the supporting artist.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="images/artist3.jpg" alt="Opening Act" class="w-full h-64 object-cover" />
+                <div class="p-6">
+                  <h3 class="text-2xl font-semibold mb-2 text-teal-700">Opening Act</h3>
+                  <p class="text-gray-700">A brief description of the opening act.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Additional Slides -->
+            <!-- Use placeholder images -->
+            <div class="swiper-slide">
+              <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="images/artist4.jpg" alt="Artist 4" class="w-full h-64 object-cover" />
+                <div class="p-6">
+                  <h3 class="text-2xl font-semibold mb-2 text-teal-700">Artist 4</h3>
+                  <p class="text-gray-700">A brief description of the artist.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Add more slides as needed -->
+          </div>
+          <!-- Swiper Pagination -->
+          <div class="swiper-pagination"></div>
         </div>
-        <!-- Artist Card -->
-        <div class="artist-card" data-aos="zoom-in" data-aos-delay="300">
-          <img src="images/artist2.jpg" alt="The Lumineers">
-          <h4>The Lumineers</h4>
-          <p>Folk-rock sensations bringing soulful melodies to the stage.</p>
-        </div>
-        <!-- Artist Card -->
-        <div class="artist-card" data-aos="zoom-in" data-aos-delay="400">
-          <img src="images/artist3.jpg" alt="Imagine Dragons">
-          <h4>Imagine Dragons</h4>
-          <p>Grammy-winning band kicking off the event with a bang.</p>
-        </div>
-        <!-- Additional Artist Cards -->
-      </div>
-      <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="500">
-        <a href="#botb" class="btn btn-outline-primary">See Battle of the Bands Winner</a>
       </div>
     </div>
   </section>
 
   <!-- Sponsors Section -->
-  <section id="sponsors" class="section-padding">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Our Sponsors</h2>
-      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">We thank our generous sponsors for making this event possible.</p>
-      <div class="sponsors-logos" data-aos="fade-up" data-aos-delay="200">
-        <img src="images/sponsor1.jpg" alt="Sponsor 1">
-        <img src="images/sponsor2.svg" alt="Sponsor 2">
-        <img src="images/sponsor3.jpg" alt="Sponsor 3">
-        <img src="images/sponsor4.svg" alt="Sponsor 4">
-        <img src="images/sponsor5.png" alt="Sponsor 5">
-        <img src="images/sponsor6.png" alt="Sponsor 6">
+  <section id="sponsors" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title">Our Sponsors</h2>
+      <p class="section-subtitle">We thank our generous sponsors for making this event possible.</p>
+      <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+        <!-- Sponsor Logos -->
+        <img src="images/sponsor1.jpg" alt="Sponsor 1" class="mx-auto h-16" />
+        <img src="images/sponsor2.svg" alt="Sponsor 2" class="mx-auto h-16" />
+        <img src="images/sponsor3.jpg" alt="Sponsor 3" class="mx-auto h-16" />
+        <img src="images/sponsor4.svg" alt="Sponsor 4" class="mx-auto h-16" />
+        <!-- Add more sponsors as needed -->
       </div>
-      <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="300">
-        <a href="#fundraising" class="btn btn-primary">Become a Sponsor</a>
+      <div class="text-center mt-8">
+        <a href="#fundraising" class="btn-primary">Become a Sponsor</a>
       </div>
     </div>
   </section>
 
   <!-- Fundraising Section -->
-  <section id="fundraising" class="section-padding bg-light">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Support Our Cause</h2>
-      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Your contributions make a significant impact.</p>
-      <div class="fundraising-grid">
-        <div class="fundraising-text" data-aos="fade-right" data-aos-delay="200">
-          <h3>Why Donate?</h3>
-          <p>Your donations help us:</p>
-          <ul>
-            <li>Host a memorable community event</li>
+  <section id="fundraising" class="py-20 bg-gradient-to-b from-white to-teal-100">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title">Support Our Cause</h2>
+      <p class="section-subtitle">Your contributions make a significant impact on our mission.</p>
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="flex flex-col justify-center">
+          <h3 class="text-3xl font-semibold mb-6 text-teal-700">Why Donate?</h3>
+          <p class="text-gray-700 mb-6">Your donations help us:</p>
+          <ul class="list-disc list-inside text-gray-700 space-y-2">
+            <li>Host a memorable event for the community</li>
             <li>Support local and national charities</li>
             <li>Provide opportunities for emerging artists</li>
-            <li>Enhance community engagement</li>
           </ul>
-          <a href="#" class="btn btn-primary">Donate Now</a>
+          <a href="https://your-donation-link.com" target="_blank" class="btn-primary mt-6 inline-block">Donate Now</a>
         </div>
-        <div class="fundraising-image" data-aos="fade-left" data-aos-delay="200">
-          <img src="images/fundraising.jpg" alt="Support Our Cause">
+        <div>
+          <img src="images/fundraising.jpg" alt="Fundraising Image" class="rounded-lg shadow-lg w-full" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Battle of the Bands Section -->
-  <section id="botb" class="section-padding">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Battle of the Bands</h2>
-      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Discover new talent competing for a spot in our lineup.</p>
-      <div class="botb-grid">
-        <div class="botb-details" data-aos="fade-right" data-aos-delay="200">
-          <h3>Event Details</h3>
-          <p><i class="fa fa-calendar-alt"></i> Date: <strong>March 15, 2023</strong></p>
-          <p><i class="fa fa-map-marker-alt"></i> Location: <strong>Wolf Pen Amphitheater</strong></p>
-          <p><i class="fa fa-clock"></i> Time: <strong>6:00 PM - 10:00 PM</strong></p>
-          <a href="#" class="btn btn-secondary">Learn More</a>
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title">Event Gallery</h2>
+      <p class="section-subtitle">Check out some highlights from our previous events.</p>
+      <!-- Swiper Slider -->
+      <div class="swiper gallerySwiper mt-10">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="relative group">
+              <img src="images/gallery1.jpg" alt="Gallery Image 1" class="rounded-lg shadow-lg w-full h-64 object-cover" />
+              <div class="absolute inset-0 bg-teal-900 bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                <a href="images/gallery1.jpg" class="text-white text-xl font-semibold" target="_blank">View Image</a>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="relative group">
+              <img src="images/gallery2.jpg" alt="Gallery Image 2" class="rounded-lg shadow-lg w-full h-64 object-cover" />
+              <div class="absolute inset-0 bg-teal-900 bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                <a href="images/gallery2.jpg" class="text-white text-xl font-semibold" target="_blank">View Image</a>
+              </div>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="relative group">
+              <img src="images/gallery3.jpg" alt="Gallery Image 3" class="rounded-lg shadow-lg w-full h-64 object-cover" />
+              <div class="absolute inset-0 bg-teal-900 bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                <a href="images/gallery3.jpg" class="text-white text-xl font-semibold" target="_blank">View Image</a>
+              </div>
+            </div>
+          </div>
+          <!-- Add more slides as needed -->
         </div>
-        <div class="botb-winner" data-aos="fade-left" data-aos-delay="200">
-          <h3>Last Year's Winner</h3>
-          <img src="images/botb-winner.jpg" alt="Battle of the Bands Winner">
-          <p class="mt-2"><strong>The Rising Stars</strong></p>
+        <!-- Swiper Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Swiper Navigation (Optional) -->
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Video Section -->
+  <section id="video" class="py-20 bg-teal-900">
+    <div class="container mx-auto px-6 text-white">
+      <h2 class="section-title text-white">IP 2024</h2>
+      <p class="section-subtitle text-teal-200">The BYX Island Party Experience.</p>
+      <div class="mt-10 flex justify-center">
+        <!-- Placeholder for Video -->
+        <div class="w-full md:w-3/4">
+          <div class="aspect-w-16 aspect-h-9">
+            <iframe src="https://www.youtube.com/embed/QaqrOoBvMtA?si=x94HvovbC78zm6kb&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="rounded-lg shadow-lg"></iframe>
+            <!-- <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen class="rounded-lg shadow-lg"></iframe> -->
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="section-padding bg-primary text-white">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Get in Touch</h2>
-      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">We'd love to hear from you!</p>
-      <div class="contact-grid">
-        <div class="contact-info" data-aos="fade-right" data-aos-delay="200">
-          <h3>Contact Information</h3>
-          <p><i class="fa fa-envelope"></i> Email: <a href="mailto:info@byxislandparty.com" class="text-white">info@byxislandparty.com</a></p>
-          <p><i class="fa fa-phone"></i> Phone: <a href="tel:+1234567890" class="text-white">+1 (234) 567-890</a></p>
-          <p>Follow us on social media:</p>
-          <div class="social-icons">
-            <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+  <section id="contact" class="py-20 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="section-title">Get in Touch</h2>
+      <p class="section-subtitle">We'd love to hear from you!</p>
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="flex flex-col justify-center">
+          <h3 class="text-3xl font-semibold mb-6 text-teal-700">Contact Information</h3>
+          <p class="text-gray-700 mb-4"><i class="fas fa-envelope mr-2"></i>Email: <a href="mailto:info@byxislandparty.com" class="text-teal-700">info@byxislandparty.com</a></p>
+          <p class="text-gray-700 mb-4"><i class="fas fa-phone mr-2"></i>Phone: <a href="tel:+1234567890" class="text-teal-700">+1 (234) 567-890</a></p>
+          <p class="text-gray-700 mb-6">Follow us on social media:</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-700 hover:text-teal-700"><i class="fab fa-facebook-f text-2xl"></i></a>
+            <a href="#" class="text-gray-700 hover:text-teal-700"><i class="fab fa-instagram text-2xl"></i></a>
+            <a href="#" class="text-gray-700 hover:text-teal-700"><i class="fab fa-twitter text-2xl"></i></a>
           </div>
         </div>
-        <div class="contact-form" data-aos="fade-left" data-aos-delay="200">
-          <h3>Send Us a Message</h3>
-          <form id="contactForm">
-            <div class="form-group">
-              <input type="text" id="contactName" required>
-              <label for="contactName">Name</label>
-            </div>
-            <div class="form-group">
-              <input type="email" id="contactEmail" required>
-              <label for="contactEmail">Email</label>
-            </div>
-            <div class="form-group">
-              <textarea id="contactMessage" rows="4" required></textarea>
-              <label for="contactMessage">Message</label>
-            </div>
-            <button type="submit" class="btn btn-light">Submit</button>
-          </form>
+        <div>
+          <h3 class="text-3xl font-semibold mb-6 text-teal-700">Our Location</h3>
+          <p class="text-gray-700 mb-4">1015 Colgate Dr<br />College Station, TX, 77840</p>
+          <div class="rounded-lg overflow-hidden shadow-lg">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13734.234754601535!2d-96.3040628!3d30.6182086!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8646846864c4365f%3A0x949e0cfd43fd3713!2sWolf%20Pen%20Creek%20Amphitheater!5e0!3m2!1sen!2sus!4v1730135312508!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
+  <footer class="bg-teal-900 text-teal-200 py-10">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- About -->
-        <div class="footer-about">
-          <h5>About BYX Island Party</h5>
+        <div>
+          <h4 class="text-xl font-semibold mb-4">About BYX Island Party</h4>
           <p>BYX Island Party is an annual music festival hosted by Beta Upsilon Chi, dedicated to fostering community and supporting charitable causes.</p>
         </div>
         <!-- Quick Links -->
-        <div class="footer-links">
-          <h5>Quick Links</h5>
-          <ul>
-            <li><a href="#lineup">Lineup</a></li>
-            <li><a href="#sponsors">Sponsors</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#botb">Battle of the Bands</a></li>
-            <li><a href="#fundraising">Fundraising</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <div>
+          <h4 class="text-xl font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#lineup" class="hover:underline">Lineup</a></li>
+            <li><a href="#sponsors" class="hover:underline">Sponsors</a></li>
+            <li><a href="#about" class="hover:underline">About</a></li>
+            <li><a href="#fundraising" class="hover:underline">Fundraising</a></li>
+            <li><a href="#contact" class="hover:underline">Contact</a></li>
           </ul>
         </div>
         <!-- Contact -->
-        <div class="footer-contact">
-          <h5>Contact Us</h5>
-          <p><i class="fa fa-envelope"></i> <a href="mailto:info@byxislandparty.com">info@byxislandparty.com</a></p>
-          <p><i class="fa fa-phone"></i> <a href="tel:+1234567890">+1 (234) 567-890</a></p>
-          <p>Follow us:</p>
-          <div class="social-icons">
-            <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+        <div>
+          <h4 class="text-xl font-semibold mb-4">Contact Us</h4>
+          <p><i class="fas fa-envelope mr-2"></i>Email: <a href="mailto:info@byxislandparty.com" class="text-teal-300">info@byxislandparty.com</a></p>
+          <p><i class="fas fa-phone mr-2"></i>Phone: <a href="tel:+1234567890" class="text-teal-300">+1 (234) 567-890</a></p>
+          <div class="mt-4 flex space-x-4">
+            <a href="#" class="hover:text-teal-300"><i class="fab fa-facebook-f text-2xl"></i></a>
+            <a href="#" class="hover:text-teal-300"><i class="fab fa-instagram text-2xl"></i></a>
+            <a href="#" class="hover:text-teal-300"><i class="fab fa-twitter text-2xl"></i></a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2023 BYX Island Party. All rights reserved.</p>
+      <div class="mt-10 text-center">
+        <p>&copy; 2025 BYX Island Party. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
+  <!-- Swiper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
   <!-- External JavaScript -->
   <script src="scripts.js"></script>
 
-  <!-- AOS Animation JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-
-  <!-- Initialize AOS -->
-  <script>
-    AOS.init({
-      once: true,
-      duration: 800,
-      offset: 100,
-    });
-  </script>
-
-  <!-- Owl Carousel JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-  <!-- Initialize Owl Carousel -->
-  <script>
-    $('.artist-carousel').owlCarousel({
-      loop: true,
-      margin: 30,
-      nav: true,
-      navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
-      dots: false,
-      autoplay: true,
-      autoplayTimeout: 5000,
-      responsive: {
-        0: { items: 1 },
-        768: { items: 2 },
-        992: { items: 3 }
-      }
-    });
-  </script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
-
 </html>

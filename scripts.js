@@ -1,45 +1,60 @@
-// Preloader
-window.addEventListener('load', () => {
-  document.getElementById('preloader').style.display = 'none';
+// Initialize Swiper
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+  autoplay: {
+    delay: 3000, // 2000 milliseconds = 2 seconds
+    disableOnInteraction: false, // Autoplay won't be disabled after user interactions
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
 });
 
-// Navbar Background Change on Scroll
-window.addEventListener('scroll', () => {
-  const navbar = document.querySelector('.navbar');
-  navbar.classList.toggle('scrolled', window.scrollY > 50);
+// Initialize Swiper for Gallery
+var swiperGallery = new Swiper(".gallerySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+  autoplay: {
+    delay: 3000, // 3 seconds for gallery slides
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".gallerySwiper .swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".gallerySwiper .swiper-button-next",
+    prevEl: ".gallerySwiper .swiper-button-prev",
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
 });
 
-// Mobile Menu Toggle
-const mobileMenu = document.getElementById('mobile-menu');
-const navMenu = document.querySelector('.nav-menu');
-
-mobileMenu.addEventListener('click', () => {
-  mobileMenu.classList.toggle('is-active');
-  navMenu.classList.toggle('active');
-});
 
 // Smooth Scrolling for Internal Links
-document.querySelectorAll('.nav-link').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener('click', function (e) {
-    if (this.getAttribute('href').startsWith('#')) {
+    if (this.getAttribute('href') !== '#') {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {
         window.scrollTo({
-          top: target.offsetTop - 70,
-          behavior: 'smooth'
+          top: target.offsetTop - 80,
+          behavior: 'smooth',
         });
-        // Close mobile menu after clicking
-        mobileMenu.classList.remove('is-active');
-        navMenu.classList.remove('active');
       }
     }
   });
 });
 
-// Contact Form Submission
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  // Implement form submission logic here
-  alert('Thank you for your message!');
-});
+// Alpine.js Mobile Menu Toggle is handled within the HTML using x-data and @click directives
