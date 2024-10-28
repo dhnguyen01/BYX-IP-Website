@@ -11,6 +11,14 @@ var swiper = new Swiper(".mySwiper", {
     el: ".swiper-pagination",
     clickable: true,
   },
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
 });
 
 // Initialize Swiper for Gallery
@@ -56,5 +64,3 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
-
-// Alpine.js Mobile Menu Toggle is handled within the HTML using x-data and @click directives
